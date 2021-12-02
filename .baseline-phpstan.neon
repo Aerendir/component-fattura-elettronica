@@ -1,97 +1,102 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiGenerali has no typehint specified\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$allegati has no type specified\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$beniServizi has no typehint specified\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$allegati is unused\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiVeicoli has no typehint specified\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$beniServizi has no type specified\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiPagamento has no typehint specified\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$beniServizi is unused\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$allegati has no typehint specified\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiGenerali has no type specified\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:getDatiGenerali\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Body\\\\DatiGeneraliInterface but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiGenerali is unused\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:getDatiBeniServizi\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Body\\\\BeniServiziInterface but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiPagamento has no type specified\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:getDatiVeicoli\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Body\\\\DatiVeicoliInterface\\|null but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiPagamento is unused\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:getDatiPagamento\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Body\\\\DatiPagamentoInterface\\|null but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiVeicoli has no type specified\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:getAllegati\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Body\\\\AllegatiInterface\\|null but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Body\\:\\:\\$datiVeicoli is unused\\.$#"
 			count: 1
 			path: src/Model/Body.php
 
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\FatturaElettronica\\:\\:\\$body has no typehint specified\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\FatturaElettronica\\:\\:\\$body has no type specified\\.$#"
 			count: 1
 			path: src/Model/FatturaElettronica.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\FatturaElettronica\\:\\:getBody\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\BodyInterface but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\FatturaElettronica\\:\\:\\$body is unused\\.$#"
 			count: 1
 			path: src/Model/FatturaElettronica.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\:\\:getCedentePrestatore\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Header\\\\CedentePrestatoreInterface but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\\\DatiTrasmissione\\:\\:\\$codiceDestinatario is never written, only read\\.$#"
 			count: 1
-			path: src/Model/Header.php
+			path: src/Model/Header/DatiTrasmissione.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\:\\:getRappresentanteFiscale\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Header\\\\RappresentanteFiscaleInterface\\|null but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\\\DatiTrasmissione\\:\\:\\$contattiTrasmittente is never written, only read\\.$#"
 			count: 1
-			path: src/Model/Header.php
+			path: src/Model/Header/DatiTrasmissione.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\:\\:getCessionarioCommittente\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Header\\\\CessionarioCommittenteInterface but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\\\DatiTrasmissione\\:\\:\\$formatoTrasmissione is never written, only read\\.$#"
 			count: 1
-			path: src/Model/Header.php
+			path: src/Model/Header/DatiTrasmissione.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\:\\:getTerzoIntermediarioOSoggettoEmittente\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Header\\\\TerzoIntermediarioOSoggettoEmittenteInterface\\|null but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\\\DatiTrasmissione\\:\\:\\$idTrasmittente is never written, only read\\.$#"
 			count: 1
-			path: src/Model/Header.php
+			path: src/Model/Header/DatiTrasmissione.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\:\\:getSoggettoEmittente\\(\\) should return SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Psr\\\\Header\\\\SoggettoEmittenteInterface\\|null but return statement is missing\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\\\DatiTrasmissione\\:\\:\\$pecDestinatario is never written, only read\\.$#"
 			count: 1
-			path: src/Model/Header.php
+			path: src/Model/Header/DatiTrasmissione.php
 
 		-
-			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Validator\\\\Validator\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Model\\\\Header\\\\DatiTrasmissione\\:\\:\\$progressivoInvio is never written, only read\\.$#"
+			count: 1
+			path: src/Model/Header/DatiTrasmissione.php
+
+		-
+			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Validator\\\\Validator\\:\\:getErrors\\(\\) return type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Validator/Validator.php
 
 		-
-			message: "#^Method SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Validator\\\\Validator\\:\\:getErrors\\(\\) return type has no value type specified in iterable type array\\.$#"
+			message: "#^Property SerendipityHQ\\\\Component\\\\FatturaElettronica\\\\Validator\\\\Validator\\:\\:\\$errors type has no value type specified in iterable type array\\.$#"
 			count: 1
 			path: src/Validator/Validator.php
 
