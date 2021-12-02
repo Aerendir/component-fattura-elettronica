@@ -26,9 +26,13 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\BodyInterface;
 final class Body implements BodyInterface
 {
     private $datiGenerali;
+
     private $beniServizi;
+
     private $datiVeicoli;
+
     private $datiPagamento;
+
     private $allegati;
 
     /**

@@ -65,6 +65,7 @@ final class Validator
         if (false === $document->schemaValidate($this->getSchema($schemaVersion))) {
             $this->catchErrors();
         }
+
         \libxml_use_internal_errors(false);
 
         return $this;
