@@ -23,6 +23,9 @@
 
     <issueHandlers>
         <MissingThrowsDocblock errorLevel="suppress" />
+
+        <!-- Breaks PHP7.3 - PHP7.4 - PHP8.0 - SF3.4 - SF4.4 -->
+        <PossiblyInvalidMethodCall errorLevel="suppress" />
     </issueHandlers>
     <plugins>
         <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
