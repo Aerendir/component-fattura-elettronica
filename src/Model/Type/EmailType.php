@@ -3,38 +3,27 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PHP Fattura Elettronica.
+ * This file is part of the Serendipity HQ Fattura Elettronica Component.
  *
- * Copyright Adamo Aerendir Crespi 2018-2019.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2018 - 2019 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\FatturaElettronica\Model\Type;
 
-use SerendipityHQ\Component\FatturaElettronica\Psr\Header\EmailTypeInterface;
+use SerendipityHQ\Component\FatturaElettronica\Psr\Type\EmailTypeInterface;
 
-/**
- * {@inheritdoc}
- */
 final class EmailType implements EmailTypeInterface
 {
-    /** @var string $email */
-    private $email;
+    private string $email;
 
-    /**
-     * @param string $email
-     */
     public function __construct(string $email)
     {
         $this->email = $email;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getEmail(): string
     {
         return $this->email;

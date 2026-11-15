@@ -3,20 +3,18 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PHP Fattura Elettronica.
+ * This file is part of the Serendipity HQ Fattura Elettronica Component.
  *
- * Copyright Adamo Aerendir Crespi 2018-2019.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2018 - 2019 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\FatturaElettronica\Model;
 
 use SerendipityHQ\Component\FatturaElettronica\Model\Header\DatiTrasmissione;
 use SerendipityHQ\Component\FatturaElettronica\Property\DOMAware;
-use SerendipityHQ\Component\FatturaElettronica\Property\DOMElementAware;
 use SerendipityHQ\Component\FatturaElettronica\Psr\Header\CedentePrestatoreInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\Header\CessionarioCommittenteInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\Header\DatiTrasmissioneInterface;
@@ -25,19 +23,12 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Header\SoggettoEmittenteInter
 use SerendipityHQ\Component\FatturaElettronica\Psr\Header\TerzoIntermediarioOSoggettoEmittenteInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\HeaderInterface;
 
-/**
- * {@inheritdoc}
- */
 final class Header implements HeaderInterface
 {
     use DOMAware;
 
-    /** @var DatiTrasmissioneInterface $datiTrasmissione */
-    private $datiTrasmissione;
+    private ?DatiTrasmissione $datiTrasmissione = null;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDatiTrasmissione(): DatiTrasmissioneInterface
     {
         if (null === $this->datiTrasmissione) {
@@ -49,37 +40,22 @@ final class Header implements HeaderInterface
         return $this->datiTrasmissione;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCedentePrestatore(): CedentePrestatoreInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRappresentanteFiscale(): ?RappresentanteFiscaleInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCessionarioCommittente(): CessionarioCommittenteInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTerzoIntermediarioOSoggettoEmittente(): ?TerzoIntermediarioOSoggettoEmittenteInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getSoggettoEmittente(): ?SoggettoEmittenteInterface
     {
     }

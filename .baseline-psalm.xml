@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<files psalm-version="7.6.0@4303c7dbbc23efaac3d988707b4acf4d5508a9cc">
+  <file src="src/FatturaElettronica.php">
+    <UnusedClass>
+      <code><![CDATA[FatturaElettronica]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Model/Body.php">
+    <InvalidReturnType>
+      <code><![CDATA[?AllegatiInterface]]></code>
+      <code><![CDATA[?DatiPagamentoInterface]]></code>
+      <code><![CDATA[?DatiVeicoliInterface]]></code>
+      <code><![CDATA[BeniServiziInterface]]></code>
+      <code><![CDATA[DatiGeneraliInterface]]></code>
+    </InvalidReturnType>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getAllegati(): ?AllegatiInterface]]></code>
+      <code><![CDATA[public function getDatiBeniServizi(): BeniServiziInterface]]></code>
+      <code><![CDATA[public function getDatiGenerali(): DatiGeneraliInterface]]></code>
+      <code><![CDATA[public function getDatiPagamento(): ?DatiPagamentoInterface]]></code>
+      <code><![CDATA[public function getDatiVeicoli(): ?DatiVeicoliInterface]]></code>
+    </MissingOverrideAttribute>
+    <MissingPropertyType>
+      <code><![CDATA[$allegati]]></code>
+      <code><![CDATA[$beniServizi]]></code>
+      <code><![CDATA[$datiGenerali]]></code>
+      <code><![CDATA[$datiPagamento]]></code>
+      <code><![CDATA[$datiVeicoli]]></code>
+    </MissingPropertyType>
+    <UnusedClass>
+      <code><![CDATA[Body]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Model/FatturaElettronica.php">
+    <InvalidReturnType>
+      <code><![CDATA[BodyInterface]]></code>
+    </InvalidReturnType>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getBody(int $position = 0): BodyInterface]]></code>
+      <code><![CDATA[public function getHeader(): HeaderInterface]]></code>
+    </MissingOverrideAttribute>
+    <PropertyNotSetInConstructor>
+      <code><![CDATA[$body]]></code>
+    </PropertyNotSetInConstructor>
+    <UnusedClass>
+      <code><![CDATA[FatturaElettronica]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Model/Header.php">
+    <InvalidReturnType>
+      <code><![CDATA[?RappresentanteFiscaleInterface]]></code>
+      <code><![CDATA[?SoggettoEmittenteInterface]]></code>
+      <code><![CDATA[?TerzoIntermediarioOSoggettoEmittenteInterface]]></code>
+      <code><![CDATA[CedentePrestatoreInterface]]></code>
+      <code><![CDATA[CessionarioCommittenteInterface]]></code>
+    </InvalidReturnType>
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getCedentePrestatore(): CedentePrestatoreInterface]]></code>
+      <code><![CDATA[public function getCessionarioCommittente(): CessionarioCommittenteInterface]]></code>
+      <code><![CDATA[public function getDatiTrasmissione(): DatiTrasmissioneInterface]]></code>
+      <code><![CDATA[public function getRappresentanteFiscale(): ?RappresentanteFiscaleInterface]]></code>
+      <code><![CDATA[public function getSoggettoEmittente(): ?SoggettoEmittenteInterface]]></code>
+      <code><![CDATA[public function getTerzoIntermediarioOSoggettoEmittente(): ?TerzoIntermediarioOSoggettoEmittenteInterface]]></code>
+    </MissingOverrideAttribute>
+    <UnusedProperty>
+      <code><![CDATA[$datiTrasmissione]]></code>
+    </UnusedProperty>
+  </file>
+  <file src="src/Model/Header/DatiTrasmissione.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getCodiceDestinatario(): string]]></code>
+      <code><![CDATA[public function getContattiTrasmittente(): ?ContattiTrasmittenteInterface]]></code>
+      <code><![CDATA[public function getFormatoTrasmissione(): string]]></code>
+      <code><![CDATA[public function getIdTrasmittente(): IdFiscaleTypeInterface]]></code>
+      <code><![CDATA[public function getPecDestinatario(): ?EmailTypeInterface]]></code>
+      <code><![CDATA[public function getProgressivoInvio(): string]]></code>
+    </MissingOverrideAttribute>
+    <PropertyNotSetInConstructor>
+      <code><![CDATA[$codiceDestinatario]]></code>
+      <code><![CDATA[$formatoTrasmissione]]></code>
+      <code><![CDATA[$idTrasmittente]]></code>
+      <code><![CDATA[$progressivoInvio]]></code>
+    </PropertyNotSetInConstructor>
+    <UnusedProperty>
+      <code><![CDATA[$codiceDestinatario]]></code>
+      <code><![CDATA[$contattiTrasmittente]]></code>
+      <code><![CDATA[$formatoTrasmissione]]></code>
+      <code><![CDATA[$idTrasmittente]]></code>
+      <code><![CDATA[$pecDestinatario]]></code>
+      <code><![CDATA[$progressivoInvio]]></code>
+    </UnusedProperty>
+  </file>
+  <file src="src/Model/Header/DatiTrasmissione/ContattiTrasmittente.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getEmail(): ?EmailTypeInterface]]></code>
+      <code><![CDATA[public function getTelefono(): ?TelefonoTypeInterface]]></code>
+    </MissingOverrideAttribute>
+    <UnusedClass>
+      <code><![CDATA[ContattiTrasmittente]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Model/Type/EmailType.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getEmail(): string]]></code>
+    </MissingOverrideAttribute>
+    <UnusedClass>
+      <code><![CDATA[EmailType]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Model/Type/IdFiscaleType.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getIdCodice(): string]]></code>
+      <code><![CDATA[public function getIdPaese(): string]]></code>
+    </MissingOverrideAttribute>
+    <UnusedClass>
+      <code><![CDATA[IdFiscaleType]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Model/Type/TelefonoType.php">
+    <MissingOverrideAttribute>
+      <code><![CDATA[public function getTelefono(): string]]></code>
+    </MissingOverrideAttribute>
+    <UnusedClass>
+      <code><![CDATA[TelefonoType]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Property/DOMAware.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[__construct]]></code>
+      <code><![CDATA[getDOMDocument]]></code>
+      <code><![CDATA[getDOMDocument]]></code>
+      <code><![CDATA[getDOMElement]]></code>
+      <code><![CDATA[getDOMElement]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Psr/Body/AllegatiInterface.php">
+    <UnusedClass>
+      <code><![CDATA[AllegatiInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Body/BeniServiziInterface.php">
+    <UnusedClass>
+      <code><![CDATA[BeniServiziInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Body/DatiGeneraliInterface.php">
+    <UnusedClass>
+      <code><![CDATA[DatiGeneraliInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Body/DatiPagamentoInterface.php">
+    <UnusedClass>
+      <code><![CDATA[DatiPagamentoInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Body/DatiVeicoliInterface.php">
+    <UnusedClass>
+      <code><![CDATA[DatiVeicoliInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/BodyInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getAllegati]]></code>
+      <code><![CDATA[getDatiBeniServizi]]></code>
+      <code><![CDATA[getDatiGenerali]]></code>
+      <code><![CDATA[getDatiPagamento]]></code>
+      <code><![CDATA[getDatiVeicoli]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Psr/FatturaElettronicaInterface.php">
+    <UnusedClass>
+      <code><![CDATA[FatturaElettronicaInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Header/CedentePrestatoreInterface.php">
+    <UnusedClass>
+      <code><![CDATA[CedentePrestatoreInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Header/CessionarioCommittenteInterface.php">
+    <UnusedClass>
+      <code><![CDATA[CessionarioCommittenteInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Header/DatiTrasmissione/ContattiTrasmittenteInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getEmail]]></code>
+      <code><![CDATA[getTelefono]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Psr/Header/DatiTrasmissioneInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getCodiceDestinatario]]></code>
+      <code><![CDATA[getContattiTrasmittente]]></code>
+      <code><![CDATA[getFormatoTrasmissione]]></code>
+      <code><![CDATA[getIdTrasmittente]]></code>
+      <code><![CDATA[getPecDestinatario]]></code>
+      <code><![CDATA[getProgressivoInvio]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Psr/Header/RappresentanteFiscaleInterface.php">
+    <UnusedClass>
+      <code><![CDATA[RappresentanteFiscaleInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Header/SoggettoEmittenteInterface.php">
+    <UnusedClass>
+      <code><![CDATA[SoggettoEmittenteInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/Header/TerzoIntermediarioOSoggettoEmittenteInterface.php">
+    <UnusedClass>
+      <code><![CDATA[TerzoIntermediarioOSoggettoEmittenteInterface]]></code>
+    </UnusedClass>
+  </file>
+  <file src="src/Psr/HeaderInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getCedentePrestatore]]></code>
+      <code><![CDATA[getCessionarioCommittente]]></code>
+      <code><![CDATA[getDatiTrasmissione]]></code>
+      <code><![CDATA[getRappresentanteFiscale]]></code>
+      <code><![CDATA[getSoggettoEmittente]]></code>
+      <code><![CDATA[getTerzoIntermediarioOSoggettoEmittente]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Psr/Type/EmailTypeInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getEmail]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Psr/Type/IdFiscaleTypeInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getIdCodice]]></code>
+      <code><![CDATA[getIdPaese]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Psr/Type/TelefonoTypeInterface.php">
+    <PossiblyUnusedMethod>
+      <code><![CDATA[getTelefono]]></code>
+    </PossiblyUnusedMethod>
+  </file>
+  <file src="src/Validator/Validator.php">
+    <PossiblyFalseOperand>
+      <code><![CDATA[$schemaVersion]]></code>
+    </PossiblyFalseOperand>
+    <UnusedClass>
+      <code><![CDATA[Validator]]></code>
+    </UnusedClass>
+  </file>
+</files>

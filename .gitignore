@@ -1,6 +1,5 @@
-phpunit.xml
-vendor
-build
+.php_cs
 composer.lock
-.php_cs.cache
-tools
+phpunit.xml
+var
+vendor

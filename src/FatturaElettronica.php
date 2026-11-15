@@ -3,21 +3,22 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PHP Fattura Elettronica.
+ * This file is part of the Serendipity HQ Fattura Elettronica Component.
  *
- * Copyright Adamo Aerendir Crespi 2018-2019.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2018 - 2019 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\FatturaElettronica;
-use \SerendipityHQ\Component\FatturaElettronica\Model\FatturaElettronica as FatturaElettronicaModel;
+
+use SerendipityHQ\Component\FatturaElettronica\Model\FatturaElettronica as FatturaElettronicaModel;
+
 /**
  * Validates the XML of a FatturaElettronica.
  */
-class FatturaElettronica
+final class FatturaElettronica
 {
     /**
      * Disable the constructor.
@@ -26,10 +27,7 @@ class FatturaElettronica
     {
     }
 
-    /**
-     * @return Model\FatturaElettronica
-     */
-    public static function create(): Model\FatturaElettronica
+    public static function create(): FatturaElettronicaModel
     {
         $document = new \DOMDocument('1.0', 'UTF-8');
 
@@ -41,8 +39,6 @@ class FatturaElettronica
         $document->appendChild($fatturaElettronicaElement);
         $document->createAttributeNS('http://www.w3.org/2000/09/xmldsig#', 'ds:attr');
 
-        $fatturaElettronica = new FatturaElettronicaModel($document, $fatturaElettronicaElement);
-
-        return $fatturaElettronica;
+        return new FatturaElettronicaModel($document, $fatturaElettronicaElement);
     }
 }

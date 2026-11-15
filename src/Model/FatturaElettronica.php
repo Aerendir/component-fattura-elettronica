@@ -3,39 +3,30 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PHP Fattura Elettronica.
+ * This file is part of the Serendipity HQ Fattura Elettronica Component.
  *
- * Copyright Adamo Aerendir Crespi 2018-2019.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2018 - 2019 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\FatturaElettronica\Model;
 
 use SerendipityHQ\Component\FatturaElettronica\Property\DOMAware;
-use SerendipityHQ\Component\FatturaElettronica\Property\DOMElementAware;
 use SerendipityHQ\Component\FatturaElettronica\Psr\BodyInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\FatturaElettronicaInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\HeaderInterface;
 
-/**
- * {@inheritdoc}
- */
 final class FatturaElettronica implements FatturaElettronicaInterface
 {
     use DOMAware;
 
-    /** @var HeaderInterface $header */
-    private $header;
+    private ?Header $header = null;
 
     /** @var BodyInterface $bodyDocument */
     private $body;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getHeader(): HeaderInterface
     {
         if (null === $this->header) {
@@ -47,9 +38,6 @@ final class FatturaElettronica implements FatturaElettronicaInterface
         return $this->header;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBody(int $position = 0): BodyInterface
     {
     }

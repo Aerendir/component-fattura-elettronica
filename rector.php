@@ -1,0 +1,38 @@
+<?php
+
+declare(strict_types=1);
+
+/*
+ * This file is part of the Serendipity HQ Fattura Elettronica Component.
+ *
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
+ */
+
+use Rector\Config\RectorConfig;
+use SerendipityHQ\Integration\Rector\SerendipityHQ;
+
+$toSkip = SerendipityHQ::buildToSkip(SerendipityHQ::SHQ_LIBRARY_SKIP);
+
+return RectorConfig::configure()
+                   ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
+                   ->withBootstrapFiles([__DIR__ . '/vendor-bin/phpunit/vendor/autoload.php'])
+                   ->withSets([
+                       Rector\Set\ValueObject\SetList::CODE_QUALITY,
+                       Rector\Set\ValueObject\SetList::CODING_STYLE,
+                       Rector\Set\ValueObject\SetList::TYPE_DECLARATION,
+                   ])
+                   ->withRules([
+                       Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector::class,
+                       Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector::class,
+                       Rector\DeadCode\Rector\Node\RemoveNonExistingVarAnnotationRector::class,
+                   ])
+                   ->withImportNames(importNames: true, importDocBlockNames: true, importShortClasses: false)
+                   ->withSkip($toSkip)
+                   ->withCache(
+                       './var/cache/rector',
+                       Rector\Caching\ValueObject\Storage\FileCacheStorage::class
+                   )
+                   ->withComposerBased(phpunit: true, symfony: true);

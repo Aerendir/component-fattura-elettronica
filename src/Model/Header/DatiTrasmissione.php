@@ -3,13 +3,12 @@
 declare(strict_types=1);
 
 /*
- * This file is part of PHP Fattura Elettronica.
+ * This file is part of the Serendipity HQ Fattura Elettronica Component.
  *
- * Copyright Adamo Aerendir Crespi 2018-2019.
+ * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
- * @author    Adamo Aerendir Crespi <hello@aerendir.me>
- * @copyright Copyright (C) 2018 - 2019 Aerendir. All rights reserved.
- * @license   MIT
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SerendipityHQ\Component\FatturaElettronica\Model\Header;
@@ -20,9 +19,6 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Header\DatiTrasmissioneInterf
 use SerendipityHQ\Component\FatturaElettronica\Psr\Type\EmailTypeInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\Type\IdFiscaleTypeInterface;
 
-/**
- * {@inheritdoc}
- */
 final class DatiTrasmissione implements DatiTrasmissioneInterface
 {
     use DOMAware;
@@ -49,50 +45,32 @@ final class DatiTrasmissione implements DatiTrasmissioneInterface
     /** @var EmailTypeInterface|null $pecDestinatario */
     private $pecDestinatario;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getIdTrasmittente(): IdFiscaleTypeInterface
     {
         return $this->idTrasmittente;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getProgressivoInvio(): string
     {
         return $this->progressivoInvio;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFormatoTrasmissione(): string
     {
         return $this->formatoTrasmissione;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCodiceDestinatario(): string
     {
         return $this->codiceDestinatario;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getContattiTrasmittente(): ? ContattiTrasmittenteInterface
+    public function getContattiTrasmittente(): ?ContattiTrasmittenteInterface
     {
         return $this->contattiTrasmittente;
     }
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getPecDestinatario(): ? EmailTypeInterface
+    public function getPecDestinatario(): ?EmailTypeInterface
     {
         return $this->pecDestinatario;
     }
