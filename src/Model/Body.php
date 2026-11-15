@@ -20,52 +20,30 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Body\DatiPagamentoInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\Body\DatiVeicoliInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\BodyInterface;
 
-/**
- * {@inheritdoc}
- */
 final class Body implements BodyInterface
 {
     private $datiGenerali;
-
     private $beniServizi;
-
     private $datiVeicoli;
-
     private $datiPagamento;
-
     private $allegati;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDatiGenerali(): DatiGeneraliInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDatiBeniServizi(): BeniServiziInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDatiVeicoli(): ?DatiVeicoliInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDatiPagamento(): ?DatiPagamentoInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getAllegati(): ?AllegatiInterface
     {
     }

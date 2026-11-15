@@ -24,28 +24,13 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Body\DatiVeicoliInterface;
  */
 interface BodyInterface
 {
-    /**
-     * @return DatiGeneraliInterface
-     */
     public function getDatiGenerali(): DatiGeneraliInterface;
 
-    /**
-     * @return BeniServiziInterface
-     */
     public function getDatiBeniServizi(): BeniServiziInterface;
 
-    /**
-     * @return DatiVeicoliInterface|null
-     */
     public function getDatiVeicoli(): ?DatiVeicoliInterface;
 
-    /**
-     * @return DatiPagamentoInterface|null
-     */
     public function getDatiPagamento(): ?DatiPagamentoInterface;
 
-    /**
-     * @return AllegatiInterface|null
-     */
     public function getAllegati(): ?AllegatiInterface;
 }

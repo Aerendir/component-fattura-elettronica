@@ -23,19 +23,12 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Header\SoggettoEmittenteInter
 use SerendipityHQ\Component\FatturaElettronica\Psr\Header\TerzoIntermediarioOSoggettoEmittenteInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\HeaderInterface;
 
-/**
- * {@inheritdoc}
- */
 final class Header implements HeaderInterface
 {
     use DOMAware;
 
-    /** @var DatiTrasmissioneInterface $datiTrasmissione */
-    private $datiTrasmissione;
+    private ?DatiTrasmissione $datiTrasmissione = null;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getDatiTrasmissione(): DatiTrasmissioneInterface
     {
         if (null === $this->datiTrasmissione) {
@@ -47,37 +40,22 @@ final class Header implements HeaderInterface
         return $this->datiTrasmissione;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCedentePrestatore(): CedentePrestatoreInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getRappresentanteFiscale(): ?RappresentanteFiscaleInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCessionarioCommittente(): CessionarioCommittenteInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTerzoIntermediarioOSoggettoEmittente(): ?TerzoIntermediarioOSoggettoEmittenteInterface
     {
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getSoggettoEmittente(): ?SoggettoEmittenteInterface
     {
     }

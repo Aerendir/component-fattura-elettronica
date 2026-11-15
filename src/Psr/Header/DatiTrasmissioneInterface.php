@@ -28,33 +28,15 @@ interface DatiTrasmissioneInterface
     /** @var string Verso privati-ver 1.2 */
     public const FORMATO_TRASMISSIONE_FPR12 = 'FPR12';
 
-    /**
-     * @return IdFiscaleTypeInterface
-     */
     public function getIdTrasmittente(): IdFiscaleTypeInterface;
 
-    /**
-     * @return string
-     */
     public function getProgressivoInvio(): string;
 
-    /**
-     * @return string
-     */
     public function getFormatoTrasmissione(): string;
 
-    /**
-     * @return string
-     */
     public function getCodiceDestinatario(): string;
 
-    /**
-     * @return ContattiTrasmittenteInterface|null
-     */
     public function getContattiTrasmittente(): ?ContattiTrasmittenteInterface;
 
-    /**
-     * @return EmailTypeInterface|null
-     */
     public function getPecDestinatario(): ?EmailTypeInterface;
 }

@@ -25,33 +25,15 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Header\TerzoIntermediarioOSog
  */
 interface HeaderInterface
 {
-    /**
-     * @return DatiTrasmissioneInterface
-     */
     public function getDatiTrasmissione(): DatiTrasmissioneInterface;
 
-    /**
-     * @return CedentePrestatoreInterface
-     */
     public function getCedentePrestatore(): CedentePrestatoreInterface;
 
-    /**
-     * @return RappresentanteFiscaleInterface|null
-     */
     public function getRappresentanteFiscale(): ?RappresentanteFiscaleInterface;
 
-    /**
-     * @return CessionarioCommittenteInterface
-     */
     public function getCessionarioCommittente(): CessionarioCommittenteInterface;
 
-    /**
-     * @return TerzoIntermediarioOSoggettoEmittenteInterface|null
-     */
     public function getTerzoIntermediarioOSoggettoEmittente(): ?TerzoIntermediarioOSoggettoEmittenteInterface;
 
-    /**
-     * @return SoggettoEmittenteInterface|null
-     */
     public function getSoggettoEmittente(): ?SoggettoEmittenteInterface;
 }

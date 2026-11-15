@@ -1,9 +1,9 @@
 <?php
 
-declare(strict_types = 1);
+declare(strict_types=1);
 
 /*
- * This file is part of the Serendipity HQ Aws Ses Bundle.
+ * This file is part of the Serendipity HQ Fattura Elettronica Component.
  *
  * Copyright (c) Adamo Aerendir Crespi <aerendir@serendipityhq.com>.
  *
@@ -11,54 +11,28 @@ declare(strict_types = 1);
  * file that was distributed with this source code.
  */
 
-use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
-use Rector\Core\Configuration\Option;
-use Rector\Core\ValueObject\PhpVersion;
-use Rector\Set\ValueObject\SetList;
+use Rector\Config\RectorConfig;
+use SerendipityHQ\Integration\Rector\SerendipityHQ;
 
-return static function (ContainerConfigurator $containerConfigurator) : void {
-    $parameters = $containerConfigurator->parameters();
+$toSkip = SerendipityHQ::buildToSkip(SerendipityHQ::SHQ_LIBRARY_SKIP);
 
-    $parameters->set(Option::PHP_VERSION_FEATURES, PhpVersion::PHP_73);
-
-    $parameters->set(Option::PATHS, [__DIR__ . '/src', __DIR__ . '/tests']);
-
-    $parameters->set(Option::BOOTSTRAP_FILES, [__DIR__ . '/vendor-bin/phpunit/vendor/autoload.php']);
-
-    $containerConfigurator->import(SetList::ACTION_INJECTION_TO_CONSTRUCTOR_INJECTION);
-    $containerConfigurator->import(SetList::CODE_QUALITY);
-    $containerConfigurator->import(SetList::CODING_STYLE);
-    $containerConfigurator->import(SetList::MONOLOG_20);
-    $containerConfigurator->import(SetList::FRAMEWORK_EXTRA_BUNDLE_40);
-    $containerConfigurator->import(SetList::FRAMEWORK_EXTRA_BUNDLE_50);
-    $containerConfigurator->import(SetList::PHP_52);
-    $containerConfigurator->import(SetList::PHP_53);
-    $containerConfigurator->import(SetList::PHP_54);
-    $containerConfigurator->import(SetList::PHP_56);
-    $containerConfigurator->import(SetList::PHP_70);
-    $containerConfigurator->import(SetList::PHP_71);
-    $containerConfigurator->import(SetList::PHP_72);
-    $containerConfigurator->import(SetList::PHP_73);
-    $containerConfigurator->import(SetList::UNWRAP_COMPAT);
-    $containerConfigurator->import(SetList::SAFE_07);
-    $containerConfigurator->import(SetList::TYPE_DECLARATION);
-
-    $parameters->set(Option::IMPORT_SHORT_CLASSES, false);
-
-    $parameters->set(
-        Option::SKIP,
-        [
-            Rector\CodeQuality\Rector\Catch_\ThrowWithPreviousExceptionRector::class,
-            Rector\CodeQuality\Rector\Concat\JoinStringConcatRector::class,
-            Rector\CodeQuality\Rector\Identical\SimplifyBoolIdenticalTrueRector::class,
-            Rector\CodingStyle\Rector\Class_\AddArrayDefaultToArrayPropertyRector::class,
-            Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector::class,
-            Rector\CodingStyle\Rector\ClassMethod\RemoveDoubleUnderscoreInMethodNameRector::class,
-            Rector\CodingStyle\Rector\Encapsed\EncapsedStringsToSprintfRector::class,
-            Rector\CodingStyle\Rector\Switch_\BinarySwitchToIfElseRector::class,
-            Rector\Php56\Rector\FunctionLike\AddDefaultValueForUndefinedVariableRector::class, // Maybe good one day
-            Rector\TypeDeclaration\Rector\ClassMethod\AddArrayParamDocTypeRector::class,
-            Rector\TypeDeclaration\Rector\ClassMethod\AddArrayReturnDocTypeRector::class,
-        ]
-    );
-};
+return RectorConfig::configure()
+                   ->withPaths([__DIR__ . '/src', __DIR__ . '/tests'])
+                   ->withBootstrapFiles([__DIR__ . '/vendor-bin/phpunit/vendor/autoload.php'])
+                   ->withSets([
+                       Rector\Set\ValueObject\SetList::CODE_QUALITY,
+                       Rector\Set\ValueObject\SetList::CODING_STYLE,
+                       Rector\Set\ValueObject\SetList::TYPE_DECLARATION,
+                   ])
+                   ->withRules([
+                       Rector\DeadCode\Rector\ClassMethod\RemoveUselessParamTagRector::class,
+                       Rector\DeadCode\Rector\ClassMethod\RemoveUselessReturnTagRector::class,
+                       Rector\DeadCode\Rector\Node\RemoveNonExistingVarAnnotationRector::class,
+                   ])
+                   ->withImportNames(importNames: true, importDocBlockNames: true, importShortClasses: false)
+                   ->withSkip($toSkip)
+                   ->withCache(
+                       './var/cache/rector',
+                       Rector\Caching\ValueObject\Storage\FileCacheStorage::class
+                   )
+                   ->withComposerBased(phpunit: true, symfony: true);

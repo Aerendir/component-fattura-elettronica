@@ -19,9 +19,6 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Header\DatiTrasmissioneInterf
 use SerendipityHQ\Component\FatturaElettronica\Psr\Type\EmailTypeInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\Type\IdFiscaleTypeInterface;
 
-/**
- * {@inheritdoc}
- */
 final class DatiTrasmissione implements DatiTrasmissioneInterface
 {
     use DOMAware;
@@ -48,49 +45,31 @@ final class DatiTrasmissione implements DatiTrasmissioneInterface
     /** @var EmailTypeInterface|null $pecDestinatario */
     private $pecDestinatario;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getIdTrasmittente(): IdFiscaleTypeInterface
     {
         return $this->idTrasmittente;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getProgressivoInvio(): string
     {
         return $this->progressivoInvio;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getFormatoTrasmissione(): string
     {
         return $this->formatoTrasmissione;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getCodiceDestinatario(): string
     {
         return $this->codiceDestinatario;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getContattiTrasmittente(): ?ContattiTrasmittenteInterface
     {
         return $this->contattiTrasmittente;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getPecDestinatario(): ?EmailTypeInterface
     {
         return $this->pecDestinatario;

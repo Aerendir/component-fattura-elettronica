@@ -18,13 +18,7 @@ namespace SerendipityHQ\Component\FatturaElettronica\Psr\Type;
  */
 interface IdFiscaleTypeInterface
 {
-    /**
-     * @return string
-     */
     public function getIdPaese(): string;
 
-    /**
-     * @return string
-     */
     public function getIdCodice(): string;
 }

@@ -21,13 +21,7 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Type\TelefonoTypeInterface;
  */
 interface ContattiTrasmittenteInterface
 {
-    /**
-     * @return TelefonoTypeInterface|null
-     */
     public function getTelefono(): ?TelefonoTypeInterface;
 
-    /**
-     * @return EmailTypeInterface|null
-     */
     public function getEmail(): ?EmailTypeInterface;
 }

@@ -15,25 +15,15 @@ namespace SerendipityHQ\Component\FatturaElettronica\Model\Type;
 
 use SerendipityHQ\Component\FatturaElettronica\Psr\Type\TelefonoTypeInterface;
 
-/**
- * {@inheritdoc}
- */
 final class TelefonoType implements TelefonoTypeInterface
 {
-    /** @var string $telefono */
-    private $telefono;
+    private string $telefono;
 
-    /**
-     * @param string $telefono
-     */
     public function __construct(string $telefono)
     {
         $this->telefono = $telefono;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTelefono(): string
     {
         return $this->telefono;
