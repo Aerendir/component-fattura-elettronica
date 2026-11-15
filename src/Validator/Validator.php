@@ -22,14 +22,10 @@ use Symfony\Component\Finder\SplFileInfo;
 final class Validator
 {
     /** @var string[] $schemas */
-    private $schemas = ['1.2'];
+    private array $schemas = ['1.2'];
 
-    /** @var array */
-    private $errors = [];
+    private array $errors = [];
 
-    /**
-     * @param \SimpleXMLElement $simpleXMLElement
-     */
     public function validateSimpleXMLElement(\SimpleXMLElement $simpleXMLElement): void
     {
         $toXML = $simpleXMLElement->saveXML();
@@ -41,11 +37,7 @@ final class Validator
         $this->validateXMLString($toXML);
     }
 
-    /**
-     * @param string      $xml
-     * @param string|null $schemaVersion
-     */
-    public function validateXMLString(string $xml, string $schemaVersion = null): void
+    public function validateXMLString(string $xml, ?string $schemaVersion = null): void
     {
         \libxml_use_internal_errors(true);
         $dom = new \DOMDocument();
@@ -54,10 +46,6 @@ final class Validator
         $this->validate($dom, $schemaVersion);
     }
 
-    /**
-     * @param \DOMDocument $document
-     * @param string|null  $schemaVersion
-     */
     public function validate(\DOMDocument $document, ?string $schemaVersion = null): self
     {
         \libxml_use_internal_errors(true);
@@ -71,17 +59,11 @@ final class Validator
         return $this;
     }
 
-    /**
-     * @return bool
-     */
     public function isValid(): bool
     {
-        return empty($this->errors);
+        return [] === $this->errors;
     }
 
-    /**
-     * @return array
-     */
     public function getErrors(): array
     {
         return $this->errors;
@@ -96,11 +78,6 @@ final class Validator
         \libxml_clear_errors();
     }
 
-    /**
-     * @param string|null $schemaVersion
-     *
-     * @return string
-     */
     private function getSchema(?string $schemaVersion): string
     {
         $schemaVersion = $schemaVersion ?? \end($this->schemas);

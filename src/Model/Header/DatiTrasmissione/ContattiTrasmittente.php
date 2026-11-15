@@ -17,42 +17,22 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\Header\DatiTrasmissione\Conta
 use SerendipityHQ\Component\FatturaElettronica\Psr\Type\EmailTypeInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\Type\TelefonoTypeInterface;
 
-/**
- * {@inheritdoc}
- */
 final class ContattiTrasmittente implements ContattiTrasmittenteInterface
 {
-    /**
-     * @var \SerendipityHQ\Component\FatturaElettronica\Psr\Type\TelefonoTypeInterface|null
-     */
-    private $telefono;
+    private TelefonoTypeInterface $telefono;
+    private EmailTypeInterface $email;
 
-    /**
-     * @var \SerendipityHQ\Component\FatturaElettronica\Psr\Type\EmailTypeInterface|null
-     */
-    private $email;
-
-    /**
-     * @param TelefonoTypeInterface $telefono
-     * @param EmailTypeInterface    $email
-     */
     public function __construct(TelefonoTypeInterface $telefono, EmailTypeInterface $email)
     {
         $this->telefono = $telefono;
         $this->email    = $email;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getTelefono(): ?TelefonoTypeInterface
     {
         return $this->telefono;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getEmail(): ?EmailTypeInterface
     {
         return $this->email;

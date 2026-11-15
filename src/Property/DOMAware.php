@@ -21,27 +21,17 @@ trait DOMAware
     /** @var \DOMElement $DOMElement */
     private $DOMElement;
 
-    /**
-     * @param \DOMDocument $DOMDocument
-     * @param \DOMElement  $DOMElement
-     */
     public function __construct(\DOMDocument $DOMDocument, \DOMElement $DOMElement)
     {
         $this->DOMDocument = $DOMDocument;
         $this->DOMElement  = $DOMElement;
     }
 
-    /**
-     * @return \DOMDocument
-     */
     public function getDOMDocument(): \DOMDocument
     {
         return $this->DOMDocument;
     }
 
-    /**
-     * @return \DOMElement
-     */
     public function getDOMElement(): \DOMElement
     {
         return $this->DOMElement;

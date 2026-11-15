@@ -18,8 +18,5 @@ namespace SerendipityHQ\Component\FatturaElettronica\Psr\Type;
  */
 interface TelefonoTypeInterface
 {
-    /**
-     * @return string
-     */
     public function getTelefono(): string;
 }

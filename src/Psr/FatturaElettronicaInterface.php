@@ -18,13 +18,7 @@ namespace SerendipityHQ\Component\FatturaElettronica\Psr;
  */
 interface FatturaElettronicaInterface
 {
-    /**
-     * @return HeaderInterface
-     */
     public function getHeader(): HeaderInterface;
 
-    /**
-     * @param int $position
-     */
     public function getBody(int $position = 0): BodyInterface;
 }

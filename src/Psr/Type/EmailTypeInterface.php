@@ -18,8 +18,5 @@ namespace SerendipityHQ\Component\FatturaElettronica\Psr\Type;
  */
 interface EmailTypeInterface
 {
-    /**
-     * @return string
-     */
     public function getEmail(): string;
 }

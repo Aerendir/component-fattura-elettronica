@@ -18,22 +18,15 @@ use SerendipityHQ\Component\FatturaElettronica\Psr\BodyInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\FatturaElettronicaInterface;
 use SerendipityHQ\Component\FatturaElettronica\Psr\HeaderInterface;
 
-/**
- * {@inheritdoc}
- */
 final class FatturaElettronica implements FatturaElettronicaInterface
 {
     use DOMAware;
 
-    /** @var HeaderInterface $header */
-    private $header;
+    private ?Header $header = null;
 
     /** @var BodyInterface $bodyDocument */
     private $body;
 
-    /**
-     * {@inheritdoc}
-     */
     public function getHeader(): HeaderInterface
     {
         if (null === $this->header) {
@@ -45,9 +38,6 @@ final class FatturaElettronica implements FatturaElettronicaInterface
         return $this->header;
     }
 
-    /**
-     * {@inheritdoc}
-     */
     public function getBody(int $position = 0): BodyInterface
     {
     }
